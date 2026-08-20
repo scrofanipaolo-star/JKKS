@@ -114,7 +114,30 @@
     .stat-value { font-size: 1.6rem; font-weight: 800; color: var(--accent); line-height: 1.2; }
     .stat-label { font-size: 0.85rem; color: #94a3b8; margin-top: 0.25rem; }
 
-    .gallery { background: var(--darker); }
+    /* Video Section */
+    .videos { background: var(--darker); }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .gallery { background: var(--dark); }
     .gallery-grid {
       display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
@@ -129,7 +152,7 @@
       padding: 1rem; font-size: 0.9rem; color: #94a3b8; text-align: center;
     }
 
-    .about { background: var(--dark); }
+    .about { background: var(--darker); }
     .about-content { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: start; }
     .about-text p { margin-bottom: 1.25rem; color: #cbd5e1; }
     .about-text strong { color: white; }
@@ -145,7 +168,7 @@
     }
     .about-card li::before { content: "▸"; color: var(--primary); }
 
-    .uses { background: var(--darker); }
+    .uses { background: var(--dark); }
     .uses-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem;
     }
@@ -233,6 +256,7 @@
       <button class="mobile-toggle" aria-label="Menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
       <nav>
         <a href="#product">Product</a>
+        <a href="#videos">Videos</a>
         <a href="#gallery">Photos</a>
         <a href="#about">About</a>
         <a href="#uses">Alternative Uses</a>
@@ -281,6 +305,25 @@
             <div class="stat"><div class="stat-value">3.5″</div><div class="stat-label">Clearance</div></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos Section -->
+  <section class="videos" id="videos">
+    <div class="container">
+      <div class="section-header">
+        <h2>See the Rice Applicator in Action</h2>
+        <p>Watch the product demonstration video.</p>
+      </div>
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/LQdqhDvyzms" 
+          title="Rice Applicator Demo"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          allowfullscreen
+          loading="lazy">
+        </iframe>
       </div>
     </div>
   </section>
@@ -411,6 +454,7 @@
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#product">Rice Applicator</a></li>
+          <li><a href="#videos">Videos</a></li>
           <li><a href="#gallery">Photo Gallery</a></li>
           <li><a href="#about">About Us</a></li>
           <li><a href="#uses">Alternative Uses</a></li>
@@ -423,7 +467,6 @@
           <li><a href="tel:2012946866">(201) 294-6866</a></li>
           <li>PO Box 9226</li>
           <li>Paramus, NJ 07653</li>
-          <li style="margin-top:0.75rem;"><a href="https://www.riceapplicator.com" target="_blank" rel="noopener">riceapplicator.com</a></li>
         </ul>
       </div>
     </div>
