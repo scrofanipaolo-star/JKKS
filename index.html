@@ -193,12 +193,23 @@
     }
     .form-group { margin-bottom: 1.15rem; }
     .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 0.4rem; color: #cbd5e1; }
-    .form-group input, .form-group textarea {
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
       width: 100%; padding: 0.75rem 1rem; background: var(--darker);
       border: 1px solid rgba(255,255,255,0.12); border-radius: 6px;
       color: white; font-family: inherit; font-size: 0.95rem;
     }
-    .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary); }
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2394a3b8' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { outline: none; border-color: var(--primary); }
     .form-group textarea { min-height: 110px; resize: vertical; }
     .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
@@ -435,6 +446,24 @@
             <input type="tel" id="phone" name="phone" placeholder="(201) 555-0123">
           </div>
         </div>
+
+        <!-- New field requested by owner -->
+        <div class="form-group">
+          <label for="source">Where did you hear about us?</label>
+          <select id="source" name="source">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Flyer">Flyer</option>
+            <option value="YouTube">YouTube</option>
+            <option value="Other fire department">Other fire department</option>
+            <option value="Fire News">Fire News</option>
+            <option value="Google search">Google search</option>
+            <option value="Referral link">Referral link</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
         <div class="form-group">
           <label for="message">Message / Questions</label>
           <textarea id="message" name="message" placeholder="Tell us about your needs, fleet size, or questions..."></textarea>
